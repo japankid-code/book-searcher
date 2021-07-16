@@ -23,12 +23,8 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, args) => {
-      console.log("args", args);
-
       const user = await User.create(args);
       const token = signToken(user);
-      console.log("token", token);
-      console.log("user", user);
 
       return { token, user };
     },
@@ -50,18 +46,19 @@ const resolvers = {
     },
     addBook: async (parent, args, context) => {
       if (context.user) {
-        const book = await Book.create({
-          ...args,
-          username: context.user.username,
-        });
+        console.log(args);
 
-        await User.findByIdAndUpdate(
+        let user = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedBooks: book._id } },
+          {
+            $addToSet: {
+              savedBooks: args,
+            },
+          },
           { new: true }
         );
-
-        return book;
+        console.log(user);
+        return user;
       }
 
       throw new AuthenticationError("You need to be logged in!");

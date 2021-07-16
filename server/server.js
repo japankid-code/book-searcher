@@ -10,11 +10,12 @@ const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
 // create Apollo server, pass in schema data
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware, // turns headers, tokens, into context
+  context: authMiddleware,
 });
 
 // add Apollo server to Express app as middleware
@@ -23,7 +24,7 @@ server.applyMiddleware({ app });
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Serve up static assets
+// Serve up static assets from build on the deploy
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
