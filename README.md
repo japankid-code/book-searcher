@@ -1,6 +1,6 @@
 # book-searcher
 
-an app for people who like to search for books. Link to repo is [here](https://github.com/japankid-code/book-searcher).
+App refactored from starter code to use Apollo and graphql. Link to [repo is here](https://github.com/japankid-code/book-searcher). Link to [deploy is here]().
 
 ![Unlicense badge](https://img.shields.io/badge/license-Unlicense-blue?style=for-the-badge)
 ![language badge](https://img.shields.io/github/languages/top/japankid-code/book-searcher?style=for-the-badge)
