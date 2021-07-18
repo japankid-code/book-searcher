@@ -1,6 +1,6 @@
 # book-searcher
 
-App refactored from starter code to use Apollo and graphql. Link to [repo is here](https://github.com/japankid-code/book-searcher). Link to [deploy is here]().
+App refactored from starter code to use Apollo and graphql. Link to [repo is here](https://github.com/japankid-code/book-searcher). Link to [deploy is here](https://radiant-brook-74021.herokuapp.com/).
 
 ![Unlicense badge](https://img.shields.io/badge/license-Unlicense-blue?style=for-the-badge)
 ![language badge](https://img.shields.io/github/languages/top/japankid-code/book-searcher?style=for-the-badge)
@@ -28,7 +28,10 @@ npm start
 ## Usage
 
 an app for people who like to search for books
-Don't forget to add images!
+
+screenie:
+
+![book search application](preview.png)
 
 ## License
 
